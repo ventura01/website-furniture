@@ -1,5 +1,8 @@
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Alata } from "next/font/google";
+import { Providers } from "./redux/provider";
+import { ToastContainer } from "react-toastify";
 
 const alata = Alata({
   subsets: ["latin"],
@@ -13,8 +16,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${alata.className}`}>
-      <body>{children}</body>
+    <html lang="es" className={`${alata.className}`}>
+      <body>
+        {/*<ToastContainer />*/}
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
