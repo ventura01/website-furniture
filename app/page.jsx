@@ -9,36 +9,24 @@ import NavIcons from "@/components/NavIcons";
 import ImageCont from "@/components/ImageCont";
 import PageCount from "@/components/PageCount";
 import RightFooter from "@/components/RightFooter";
-// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-// import PayPalPayment from "@/components/PayPalPayment";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  // const initialOptions = {
-  //   "client-id":
-  //     "AfJuqKR1TCaFowfCX8itq6b0Vcpji5HAHY9OcCKoulzdE2-bXcWthO-i0_vkCSVmwxvJha-ECAiiyDw7",
-  //   moneda: "USD",
-  //   intent: "capture",
-  // "data-client-token" : "abc123xyz==" ,
-  // };
   return (
-    // <PayPalScriptProvider options={initialOptions}>
     <main className="md:w-screen md:h-screen md:flex">
       <div className="px-2 h-full flex flex-1 flex-col justify-between md:pl-40 md:pr-24 pb-8">
         <NavLinks />
         <HeroContent />
-        {/*<PayPalButtons />*/}
-        {/*<PayPalPayment />*/}
         <LeftFooter />
       </div>
       <div className="h-full flex-1 bg-[#fff0c8] pr-40  flex flex-col pl-24 relative justify-between">
         <NavIcons />
         <ImageCont />
         <PageCount />
+
         <RightFooter />
       </div>
     </main>
-    // </PayPalScriptProvider>
   );
 }

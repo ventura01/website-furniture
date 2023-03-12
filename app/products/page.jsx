@@ -54,12 +54,14 @@ const ProductPage = () => {
                 <p>${producto.price}</p>
               </div>
               <div>
-                <button
-                  className="bg-yellow-500 py-4 px-6"
-                  onClick={() => handleAddToCart(producto)}
-                >
-                  Add to Cart
-                </button>
+                <Link href={"/cart"}>
+                  <button
+                    className="bg-yellow-500 py-4 px-6"
+                    onClick={() => handleAddToCart(producto)}
+                  >
+                    Add to Cart
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
