@@ -15,17 +15,17 @@ const NavIcons = () => {
       <div className="flex justify-end space-x-8 py-12">
         <Link href={"/cart"}>
           <div className="relative">
-            <MdShoppingBag />
+            <MdShoppingBag color="#2C3333" />
             <span className="bg-yellow-600 py-[1px] absolute -right-3 -top-4 px-[6px] text-[12px] text-white rounded-full">
               {qty}
             </span>
           </div>
         </Link>
         <div>
-          <BsFillHeartFill />
+          <BsFillHeartFill color="#2C3333" />
         </div>
         <div>
-          <BsFillPersonFill />
+          <BsFillPersonFill color="#2C3333" />
         </div>
       </div>
     </section>

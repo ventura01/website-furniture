@@ -13,6 +13,8 @@ import {
   clearCart,
   getTotals,
 } from "../redux/features/cart/cartSlice";
+import NavLinks from "@/components/NavLinks";
+import NavIcons from "@/components/NavIcons";
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -34,9 +36,13 @@ const CartPage = () => {
   useEffect(() => {
     dispatch(getTotals());
   }, [cart, dispatch]);
-  
+
   return (
-    <div className="w-[1200px] mx-w-[1200px] mt-16 mx-auto">
+    <div className="container mx-auto">
+      <div className="flex justify-around">
+        <NavLinks />
+        <NavIcons />
+      </div>
       <h2 className="text-center text-4xl font-bold">Shopping Cart</h2>
 
       {cart.cartItems.length === 0 ? (

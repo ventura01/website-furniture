@@ -54,7 +54,7 @@ const ContactPage = () => {
         <label>Message</label>
         <textarea className="py-2 pl-3 mb-4 border-2 rounded-lg" name="message" placeholder="Message" />
         <input
-          className="rounded-lg mb-4 pl-2 bg-yellow-500 py-2 px-4 hover:bg-yellow-300"
+          className="rounded-lg mb-4 pl-2 bg-yellow-500 py-2 px-4 hover:bg-yellow-400"
           type="submit"
           value="Send"
           disabled={clickBtnSent}
