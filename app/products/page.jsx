@@ -17,10 +17,14 @@ const ProductPage = () => {
   };
 
   return (
-    <div>
-      <div className="container mx-auto flex justify-around">
+    <div className="bg-[#F0ECE2]">
+      <div className="container mx-auto flex justify-between">
         <NavLinks />
         <NavIcons />
+      </div>
+      <div className="flex flex-col container mx-auto pb-14 pt-20">
+        <h3 className="text-center text-3xl text-[#1F1D36] font-bold">Our Products</h3>
+        <p className="text-center text-lg text-[#69779B]">Lorem ipsum dolor sit amet consectetur.</p>
       </div>
       <div className="container mx-auto">
         <div className="">
@@ -28,7 +32,7 @@ const ProductPage = () => {
             {productos.map((producto) => (
               <div
                 key={producto.id}
-                className="rounded-3xl bg-zinc-100 overflow-hidden"
+                className="rounded-sm bg-zinc-100 overflow-hidden"
               >
                 <Link href={`/${producto.id}`}>
                   <Image
@@ -52,14 +56,14 @@ const ProductPage = () => {
                 <div className="flex justify-around">
                   <Link href={"/cart"}>
                     <button
-                      className="bg-yellow-500 py-2 px-6 rounded-lg mb-4"
+                      className="bg-yellow-500 py-2 px-6 rounded-sm mb-4"
                       onClick={() => handleAddToCart(producto)}
                     >
                       Add to Cart
                     </button>
                   </Link>
                   <Link href={`/${producto.id}`}>
-                    <button className="bg-yellow-500 py-2 px-6 rounded-lg mb-4">
+                    <button className="bg-yellow-500 py-2 px-6 rounded-sm mb-4">
                       See Details
                     </button>
                   </Link>

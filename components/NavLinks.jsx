@@ -9,7 +9,7 @@ const links = [
 const NavLinks = () => {
   return (
     <nav>
-      <div className="hidden  space-x-8 justify-around py-8 text-sm text-gray-500 md:flex">
+      <div className="hidden  space-x-8 justify-around text-sm text-gray-500 md:flex">
         {links.map((link) => (
           <div key={link.name}>
             <Link href={link.route}>

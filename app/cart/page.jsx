@@ -5,7 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import { MdKeyboardBackspace } from "react-icons/md";
 import Image from "next/image";
-import { BsFillBasket3Fill } from "react-icons/bs";
+import {
+  BsFillBasket3Fill,
+  BsPlusCircleFill,
+  BsDashCircleFill,
+} from "react-icons/bs";
 import {
   addToCart,
   decreaseFromCart,
@@ -39,7 +43,7 @@ const CartPage = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="flex justify-around">
+      <div className="flex justify-between">
         <NavLinks />
         <NavIcons />
       </div>
@@ -93,15 +97,12 @@ const CartPage = () => {
                 </div>
                 <div className="text-center self-center">${cartItem.price}</div>
                 <div className="flex items-center mx-auto border-2 self-center justify-around w-24 mx-w-24 rounded-md ">
-                  <button
-                    onClick={() => handleDecreaseFromCart(cartItem)}
-                    className=""
-                  >
-                    -
+                  <button onClick={() => handleDecreaseFromCart(cartItem)}>
+                    <BsDashCircleFill color="#707070" size={".85rem"} />
                   </button>
                   <div>{cartItem.cartQuantity}</div>
                   <button onClick={() => handleIncreaseCart(cartItem)}>
-                    +
+                    <BsPlusCircleFill color="#707070" size={".85rem"} />
                   </button>
                 </div>
                 <div className="text-end pr-3 self-center font-semibold">

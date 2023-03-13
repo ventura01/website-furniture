@@ -12,15 +12,19 @@ const NavIcons = () => {
 
   return (
     <section id="nav-icons">
-      <div className="flex justify-end space-x-8 py-12">
-        <Link href={"/cart"}>
-          <div className="relative">
-            <MdShoppingBag color="#2C3333" />
-            <span className="bg-yellow-600 py-[1px] absolute -right-3 -top-4 px-[6px] text-[12px] text-white rounded-full">
-              {qty}
-            </span>
-          </div>
-        </Link>
+      <div className="flex justify-end space-x-8 py-4">
+        {qty > 0 ? (
+          <Link href={"/cart"}>
+            <div className="relative">
+              <MdShoppingBag color="#2C3333" />
+              <span className="bg-yellow-600 py-[1px] absolute -right-3 -top-4 px-[6px] text-[12px] text-white rounded-full">
+                {qty}
+              </span>
+            </div>
+          </Link>
+        ) : (
+          <MdShoppingBag color="#2C3333" />
+        )}
         <div>
           <BsFillHeartFill color="#2C3333" />
         </div>
