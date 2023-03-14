@@ -3,10 +3,12 @@
 import { toast } from "react-toastify";
 import { createSlice } from "@reduxjs/toolkit";
 
+const items = localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
+
 const initialState = {
-  cartItems: localStorage.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItems"))
-    : [],
+  cartItems: items,
   cartTotalAmount: 0,
   cartTotalQuantity: 0,
 };

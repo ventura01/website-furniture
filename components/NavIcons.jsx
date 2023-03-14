@@ -23,7 +23,11 @@ const NavIcons = () => {
             </div>
           </Link>
         ) : (
-          <MdShoppingBag color="#2C3333" />
+          <Link href={"/cart"}>
+            <div>
+              <MdShoppingBag color="#2C3333" />
+            </div>
+          </Link>
         )}
         <div>
           <BsFillHeartFill color="#2C3333" />

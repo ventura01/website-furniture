@@ -9,6 +9,9 @@ import { addToCart } from "../redux/features/cart/cartSlice";
 import { BsFillBagFill, BsFillHouseFill } from "react-icons/bs";
 import NavLinks from "@/components/NavLinks";
 import NavIcons from "@/components/NavIcons";
+import RightFooter from "@/components/RightFooter";
+import LeftFooter from "@/components/LeftFooter";
+import PagesFooter from "@/components/PagesFooter";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -17,14 +20,18 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="bg-[#F0ECE2]">
+    <div className="bg-[#EDF1D6]">
       <div className="container mx-auto flex justify-between">
         <NavLinks />
         <NavIcons />
       </div>
       <div className="flex flex-col container mx-auto pb-14 pt-20">
-        <h3 className="text-center text-3xl text-[#1F1D36] font-bold">Our Products</h3>
-        <p className="text-center text-lg text-[#69779B]">Lorem ipsum dolor sit amet consectetur.</p>
+        <h3 className="text-center text-3xl text-[#40513B] font-bold">
+          Our Products
+        </h3>
+        <p className="text-center text-lg text-[#9DC08B]">
+          Lorem ipsum dolor sit amet consectetur.
+        </p>
       </div>
       <div className="container mx-auto">
         <div className="">
@@ -32,7 +39,7 @@ const ProductPage = () => {
             {productos.map((producto) => (
               <div
                 key={producto.id}
-                className="rounded-sm bg-zinc-100 overflow-hidden"
+                className="rounded-sm bg-white overflow-hidden"
               >
                 <Link href={`/${producto.id}`}>
                   <Image
@@ -71,6 +78,11 @@ const ProductPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="bg-[#9DC08B]">
+        <div className="container mx-auto">
+          <PagesFooter />
         </div>
       </div>
     </div>
