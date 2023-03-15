@@ -19,6 +19,7 @@ import {
 } from "../redux/features/cart/cartSlice";
 import NavLinks from "@/components/NavLinks";
 import NavIcons from "@/components/NavIcons";
+import toast, { Toaster } from "react-hot-toast";
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -44,11 +45,10 @@ const CartPage = () => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-between">
-        <NavLinks />
+        <NavLinks className="hidden md:flex" />
         <NavIcons />
       </div>
-      <h2 className="text-center text-4xl font-bold">Shopping Cart</h2>
-
+      <h2 className="text-center text-4xl mt-8 font-bold">Shopping Cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="flex flex-col items-center mt-40">
           <BsFillBasket3Fill size={"4rem"} color={"#707070"} />
@@ -66,16 +66,16 @@ const CartPage = () => {
       ) : (
         <div>
           <div className="grid grid-cols-4 mt-24">
-            <h3 className="text-start pl-3">PRODUCT</h3>
-            <h3 className="text-center">PRICE</h3>
-            <h3 className="text-center">QUANTITY</h3>
-            <h3 className="text-end pr-3">TOTAL</h3>
+            <h3 className="text-sm md:text-base text-start pl-3">PRODUCT</h3>
+            <h3 className="text-sm md:text-base text-center">PRICE</h3>
+            <h3 className="text-sm md:text-base text-center">QUANTITY</h3>
+            <h3 className="text-sm md:text-base text-end pr-3">TOTAL</h3>
           </div>
           <div>
             {cart.cartItems.map((cartItem) => (
               <div key={cartItem.id} className="grid grid-cols-4 border-t-2">
                 <div className="flex p-3 items-center">
-                  <div className="w-[100px] h-[100px] overflow-hidden">
+                  <div className="h-24 w-24 rounded-2xl overflow-hidden">
                     <Image
                       src={cartItem.url}
                       alt={cartItem.name}
@@ -96,7 +96,7 @@ const CartPage = () => {
                   </div>
                 </div>
                 <div className="text-center self-center">${cartItem.price}</div>
-                <div className="flex items-center mx-auto border-2 self-center justify-around w-24 mx-w-24 rounded-md ">
+                <div className="flex items-center mx-auto border-2 self-center justify-around w-14 mx-w-24 rounded-md md:w-24">
                   <button onClick={() => handleDecreaseFromCart(cartItem)}>
                     <BsDashCircleFill color="#707070" size={".85rem"} />
                   </button>
@@ -104,6 +104,28 @@ const CartPage = () => {
                   <button onClick={() => handleIncreaseCart(cartItem)}>
                     <BsPlusCircleFill color="#707070" size={".85rem"} />
                   </button>
+                  <Toaster
+                    toastOptions={{
+                      success: {
+                        style: {
+                          background: "green",
+                          color: "#fff",
+                        },
+                      },
+                      error: {
+                        style: {
+                          background: "red",
+                          color: "#fff",
+                        },
+                      },
+                      info: {
+                        style: {
+                          background: "teal",
+                          color: "#fff",
+                        },
+                      },
+                    }}
+                  />
                 </div>
                 <div className="text-end pr-3 self-center font-semibold">
                   ${cartItem.price * cartItem.cartQuantity}

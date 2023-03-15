@@ -6,6 +6,7 @@ import { productos } from "../../datos";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/features/cart/cartSlice";
 import { BsFillBagFill, BsFillHouseFill } from "react-icons/bs";
+import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
 import NavIcons from "@/components/NavIcons";
@@ -26,7 +27,7 @@ const ProductDetail = ({ params }) => {
       </div>
 
       <div className="flex pl-40 pt-40 pr-40">
-        <div className="">
+        <div>
           <Image
             src={data.url}
             alt={data.name}
@@ -48,6 +49,22 @@ const ProductDetail = ({ params }) => {
               >
                 Shop Now!
               </button>
+              <Toaster
+                toastOptions={{
+                  success: {
+                    style: {
+                      background: "green",
+                      color: "#fff",
+                    },
+                  },
+                  error: {
+                    style: {
+                      background: "red",
+                      color: "#fff",
+                    },
+                  },
+                }}
+              />
             </Link>
           </div>
         </div>

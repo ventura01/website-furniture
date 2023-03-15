@@ -12,6 +12,7 @@ import NavIcons from "@/components/NavIcons";
 import RightFooter from "@/components/RightFooter";
 import LeftFooter from "@/components/LeftFooter";
 import PagesFooter from "@/components/PagesFooter";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -35,11 +36,11 @@ const ProductPage = () => {
       </div>
       <div className="container mx-auto">
         <div className="">
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-8">
             {productos.map((producto) => (
               <div
                 key={producto.id}
-                className="rounded-sm bg-white overflow-hidden"
+                className="rounded-3xl bg-[#9DC08B] overflow-hidden"
               >
                 <Link href={`/${producto.id}`}>
                   <Image
@@ -52,25 +53,41 @@ const ProductPage = () => {
                 </Link>
                 <div className="p-3">
                   <h4 className="text-gray-600 uppercase">{producto.cat}</h4>
-                  <h3 className="text-2xl font-semibold">{producto.name}</h3>
-                  <p className="text-gray-700 font-light">
+                  <h3 className="text-2xl text-[#f9fff6] font-semibold">
+                    {producto.name}
+                  </h3>
+                  <p className="text-[#40513B] font-light">
                     {producto.shortDesc}
                   </p>
-                  <p className="text-xl text-right my-3 pr-6 font-bold">
-                    ${producto.price}
+                  <p className="text-xl text-right text-[#40513B] my-3 pr-6 font-bold">
+                    ${producto.price}.00
                   </p>
                 </div>
                 <div className="flex justify-around">
-                  <Link href={"/cart"}>
-                    <button
-                      className="bg-yellow-500 py-2 px-6 rounded-sm mb-4"
-                      onClick={() => handleAddToCart(producto)}
-                    >
-                      Add to Cart
-                    </button>
-                  </Link>
+                  <button
+                    className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4"
+                    onClick={() => handleAddToCart(producto)}
+                  >
+                    Add to Cart
+                  </button>
+                  <Toaster
+                    toastOptions={{
+                      success: {
+                        style: {
+                          background: "green",
+                          color: "#fff",
+                        },
+                      },
+                      error: {
+                        style: {
+                          background: "red",
+                          color: "#fff",
+                        },
+                      },
+                    }}
+                  />
                   <Link href={`/${producto.id}`}>
-                    <button className="bg-yellow-500 py-2 px-6 rounded-sm mb-4">
+                    <button className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4">
                       See Details
                     </button>
                   </Link>
@@ -80,7 +97,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#9DC08B]">
+      <div className="bg-[#9DC08B] mt-12">
         <div className="container mx-auto">
           <PagesFooter />
         </div>

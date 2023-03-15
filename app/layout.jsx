@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${alata.className}`}>
       <body>
-        {/*<ToastContainer />*/}
-        <Providers>{children}</Providers>
+      <Providers>{children}</Providers>
+      {/*<ToastContainer />*/}
       </body>
     </html>
   );
