@@ -36,7 +36,7 @@ const ProductPage = () => {
       </div>
       <div className="container mx-auto">
         <div className="">
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {productos.map((producto) => (
               <div
                 key={producto.id}

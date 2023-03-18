@@ -5,7 +5,7 @@ import { BsTwitch, BsTwitter, BsArrowLeft } from "react-icons/bs";
 const LeftFooter = () => {
   return (
     <section id="left-footer" className="flex justify-between">
-      <div className="flex space-x-4">  
+      <div className="flex space-x-4">
         <div>
           <MdOutlineCatchingPokemon />
         </div>
@@ -19,9 +19,9 @@ const LeftFooter = () => {
           <BsTwitter />
         </div>
       </div>
-      <div>
+      {/*<div>
         <BsArrowLeft />
-      </div>
+      </div>*/}
     </section>
   );
 };
