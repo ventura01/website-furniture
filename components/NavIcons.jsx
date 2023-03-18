@@ -8,17 +8,18 @@ import { MdShoppingBag } from "react-icons/md";
 import { useSelector } from "react-redux";
 
 const NavIcons = () => {
-  const qty = useSelector((state) => state.cart.cartTotalQuantity);
-
+  const qtyCart = useSelector((state) => state.cart.cartTotalQuantity);
+  const qtyWishList = useSelector((state) => state.wishlist.wishTotalQuantity);
+console.log(qtyWishList)
   return (
     <section id="nav-icons">
       <div className="flex justify-end space-x-8 py-4">
-        {qty > 0 ? (
+        {qtyCart > 0 ? (
           <Link href={"/cart"}>
             <div className="relative">
               <MdShoppingBag color="#2C3333" />
               <span className="bg-yellow-600 py-[1px] absolute -right-3 -top-4 px-[6px] text-[12px] text-white rounded-full">
-                {qty}
+                {qtyCart}
               </span>
             </div>
           </Link>
@@ -29,9 +30,22 @@ const NavIcons = () => {
             </div>
           </Link>
         )}
-        <div>
-          <BsFillHeartFill color="#2C3333" />
-        </div>
+        {qtyWishList > 0 ? (
+          <Link href={"/wishlist"}>
+            <div className="relative">
+              <BsFillHeartFill color="#2C3333" />
+              <span className="bg-yellow-600 py-[1px] absolute -right-3 -top-4 px-[6px] text-[12px] text-white rounded-full">
+                {qtyWishList}
+              </span>
+            </div>
+          </Link>
+        ) : (
+          <Link href={"/wishlist"}>
+            <div className="relative">
+              <BsFillHeartFill color="#2C3333" />
+            </div>
+          </Link>
+        )}
         <div>
           <BsFillPersonFill color="#2C3333" />
         </div>

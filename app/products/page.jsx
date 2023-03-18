@@ -12,14 +12,18 @@ import NavIcons from "@/components/NavIcons";
 import RightFooter from "@/components/RightFooter";
 import LeftFooter from "@/components/LeftFooter";
 import PagesFooter from "@/components/PagesFooter";
+import { BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
 import toast, { Toaster } from "react-hot-toast";
+import { addToWishList } from "../redux/features/wishlist/wishListSlice";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (producto) => {
     dispatch(addToCart(producto));
   };
-
+  const handleAddToWishList = (producto) => {
+    dispatch(addToWishList(producto));
+  };
   return (
     <div className="bg-[#EDF1D6]">
       <div className="container mx-auto flex justify-between">
@@ -91,6 +95,12 @@ const ProductPage = () => {
                       See Details
                     </button>
                   </Link>
+                  <button
+                    onClick={() => handleAddToWishList(producto)}
+                    className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4"
+                  >
+                    <BsFillHeartFill />
+                  </button>
                 </div>
               </div>
             ))}

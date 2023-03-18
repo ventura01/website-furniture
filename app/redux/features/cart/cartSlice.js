@@ -4,14 +4,14 @@
 import toast, { Toaster } from "react-hot-toast";
 import { createSlice } from "@reduxjs/toolkit";
 
-const items =
-  typeof window !== "undefined" && localStorage.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItems"))
-    : [];
+// const items =
+//   typeof window !== "undefined" && localStorage.getItem("cartItems")
+//     ? JSON.parse(localStorage.getItem("cartItems"))
+//     : [];
 
 const initialState = {
-  // cartItems: [],
-  cartItems: items,
+  cartItems: [],
+  // cartItems: items,
   cartTotalAmount: 0,
   cartTotalQuantity: 0,
 };
