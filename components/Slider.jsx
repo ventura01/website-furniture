@@ -27,9 +27,9 @@ const Slider = () => {
     <div className="flex max-w-[1400px] w-full h-[780px] m-auto relative">
       <div
         style={{ backgroundImage: `url(${productos[currentIndex].url})` }}
-        className="w-[950px] h-[350px] bg-center bg-cover duration-500 md:absolute md:bottom-72 md:-right-[95%] z-10"
+        className="w-[950px] h-[350px] bg-center bg-cover duration-500 md:absolute md:bottom-72 md:-right-[105%] z-10"
       ></div>
-      <div className="z-20 flex flex-col md:w-[80%] md:absolute md:top-36 mb-12 mt-12 space-y-12 items-start">
+      <div className="z-20 flex flex-col md:w-[80%] md:absolute md:top-20 mb-12 mt-12 space-y-12 items-start">
         <h3 className="uppercase text-lg text-gray-500 font-bold">
           {productos[currentIndex].cat}
         </h3>
@@ -41,7 +41,7 @@ const Slider = () => {
           ${productos[currentIndex].price}.00
         </strong>
       </div>
-      <div className="absolute bottom-36">
+      <div className="absolute bottom-52">
         <Link href={"/products"}>
           <button className="py-4 px-6 rounded-sm bg-yellow-500">
             Shop Now!

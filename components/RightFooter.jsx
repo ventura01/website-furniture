@@ -5,13 +5,13 @@ const fecha = new Date().getFullYear();
 
 const RightFooter = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex relative">
       {/*<div className="self-center">
         <BsArrowRight />
   </div>*/}
       {/*<div className="md:absolute md:right-90 md:bottom-60"><button className="py-4 px-6 bg-yellow-500 hover:bg-yellow-300 hover:text-white">Add to Cart</button></div>*/}
-      <div className="mb-8">
-        <div className="flex items-center justify-center my-4">
+      <div className="mb-16 absolute -right-[40px] -bottom-10">
+        <div className="flex  items-center justify-center my-4">
           <form>
             <input
               type="text"
