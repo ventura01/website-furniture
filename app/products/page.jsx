@@ -7,12 +7,14 @@ import { productos } from "../../datos";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/features/cart/cartSlice";
 import { BsFillBagFill, BsFillHouseFill } from "react-icons/bs";
+import { MdSearch } from "react-icons/md";
 import NavLinks from "@/components/NavLinks";
 import NavIcons from "@/components/NavIcons";
 import RightFooter from "@/components/RightFooter";
 import LeftFooter from "@/components/LeftFooter";
 import PagesFooter from "@/components/PagesFooter";
-import { BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
+import { BsFillHeartFill, BsHeart } from "react-icons/bs";
+import { MdAddShoppingCart } from "react-icons/md";
 import toast, { Toaster } from "react-hot-toast";
 import { addToWishList } from "../redux/features/wishlist/wishListSlice";
 
@@ -68,12 +70,6 @@ const ProductPage = () => {
                   </p>
                 </div>
                 <div className="flex justify-around">
-                  <button
-                    className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4"
-                    onClick={() => handleAddToCart(producto)}
-                  >
-                    Add to Cart
-                  </button>
                   <Toaster
                     toastOptions={{
                       success: {
@@ -92,14 +88,20 @@ const ProductPage = () => {
                   />
                   <Link href={`/${producto.id}`}>
                     <button className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4">
-                      See Details
+                      <MdSearch size={"1.15rem"} />
                     </button>
                   </Link>
                   <button
                     onClick={() => handleAddToWishList(producto)}
                     className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4"
                   >
-                    <BsFillHeartFill />
+                    <BsHeart />
+                  </button>
+                  <button
+                    className="bg-yellow-500 text-white py-2 px-6 rounded-3xl mb-4"
+                    onClick={() => handleAddToCart(producto)}
+                  >
+                    <MdAddShoppingCart size={"1.15rem"} />
                   </button>
                 </div>
               </div>

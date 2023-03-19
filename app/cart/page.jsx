@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
-import { MdKeyboardBackspace } from "react-icons/md";
+import { MdKeyboardBackspace, MdRemoveShoppingCart } from "react-icons/md";
 import Image from "next/image";
 import {
   BsFillBasket3Fill,
@@ -51,17 +51,16 @@ const CartPage = () => {
       <h2 className="text-center text-4xl mt-8 font-bold">Shopping Cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="flex flex-col items-center mt-40">
-          <BsFillBasket3Fill size={"4rem"} color={"#707070"} />
+          <MdRemoveShoppingCart size={"4rem"} color={"#707070"} />
           <p className="mt-4">Your cart is currently empty!</p>
-          <div>
-            <Link href={"/"}>
-              <div className="flex">
+          <Link href={"/products"}>
+            <div>
+              <div className="flex items-center">
                 <MdKeyboardBackspace />
-
-                <span>Start Shopping</span>
+                <span className="ml-2">Start Shopping</span>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       ) : (
         <div>
@@ -153,14 +152,14 @@ const CartPage = () => {
               <button className="w-full bg-blue-500 text-white tracking-wide rounded-lg py-2 mt-3">
                 Check Out
               </button>
-              <div className="mt-3 flex items-center">
-                <Link href={"/products"}>
+              <Link href={"/products"}>
+                <div className="mt-3 flex items-center">
                   <div>
                     <MdKeyboardBackspace />
                   </div>
-                  <span>Continue Shopping</span>
-                </Link>
-              </div>
+                  <span className="ml-2">Continue Shopping</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

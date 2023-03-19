@@ -7,6 +7,7 @@ import {
   BsFillBasket3Fill,
   BsPlusCircleFill,
   BsDashCircleFill,
+  BsFillHeartbreakFill,
 } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,10 +47,10 @@ const WishListPage = () => {
         <NavLinks className="hidden md:flex" />
         <NavIcons />
       </div>
-      <h2 className="text-center text-4xl mt-8 font-bold">Wishlist</h2>
+      <h2 className="text-center text-4xl mt-8 font-bold">My Wishlist</h2>
       {wishlist.wishItems.length === 0 ? (
         <div className="flex flex-col items-center mt-40">
-          <BsFillBasket3Fill size={"4rem"} color={"#707070"} />
+          <BsFillHeartbreakFill size={"4rem"} color={"#707070"} />
           <p className="mt-4">Your Wishlist is currently empty!</p>
           <div>
             <Link href={"/products"}>
@@ -156,14 +157,14 @@ const WishListPage = () => {
               <button className="w-full bg-blue-500 text-white tracking-wide rounded-lg py-2 mt-3">
                 Add All to Cart
               </button>
-              <div className="mt-3 flex items-center">
-                <Link href={"/products"}>
+              <Link href={"/products"}>
+                <div className="mt-3 flex justify-center items-center ">
                   <div>
                     <MdKeyboardBackspace />
                   </div>
-                  <span>Continue Shopping</span>
-                </Link>
-              </div>
+                  <span className="ml-2">Continue Shopping</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
